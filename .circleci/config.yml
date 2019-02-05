@@ -61,7 +61,8 @@ jobs:
             cd ~
             git clone https://github.com/T4mmi/ITKBinaryThinning3D
             cd ITKBinaryThinning3D
-            sh ~/ITKBinaryThinning3D/dockcross-manylinux-download-cache-and-build-module-wheels.sh
+            ln -s ~/ITKThickness3D/dockcross-manylinux-download-cache-and-build-module-wheels.sh ./dockcross-manylinux-download-cache-and-build-module-wheels.sh
+            ./dockcross-manylinux-download-cache-and-build-module-wheels.sh
       - run:
           name: Build Python packages
           no_output_timeout: 1.0h
