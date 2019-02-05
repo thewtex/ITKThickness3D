@@ -55,21 +55,22 @@ jobs:
           command: |
             curl -L https://rawgit.com/InsightSoftwareConsortium/ITKPythonPackage/master/scripts/dockcross-manylinux-download-cache-and-build-module-wheels.sh -O
             chmod u+x dockcross-manylinux-download-cache-and-build-module-wheels.sh
-      - run:
-          name: Build Module Dependencies
-          command: |
-            cd ~
-            git clone https://github.com/T4mmi/ITKBinaryThinning3D
-            cd ITKBinaryThinning3D
-            mv ~/ITKThickness3D/dockcross-manylinux-download-cache-and-build-module-wheels.sh .
-            ./dockcross-manylinux-download-cache-and-build-module-wheels.sh
+      # - run:
+      #     name: Build Module Dependencies
+      #     command: |
+      #       cd ~
+      #       git clone https://github.com/T4mmi/ITKBinaryThinning3D
+      #       cd ITKBinaryThinning3D
+      #       mv ~/ITKThickness3D/dockcross-manylinux-download-cache-and-build-module-wheels.sh .
+      #       ./dockcross-manylinux-download-cache-and-build-module-wheels.sh
       - run:
           name: Build Python packages
           no_output_timeout: 1.0h
           command: |
-            mv ~/ITKBinaryThinning3D/ITKPythonPackage .
-            mv ~/ITKBinaryThinning3D/tools .
-            ./ITKPythonPackage/scripts/dockcross-manylinux-build-module-wheels.sh
+            # mv ~/ITKBinaryThinning3D/ITKPythonPackage .
+            # mv ~/ITKBinaryThinning3D/tools .
+            # ./ITKPythonPackage/scripts/dockcross-manylinux-build-module-wheels.sh
+            ./dockcross-manylinux-download-cache-and-build-module-wheels.sh
       - store_artifacts:
           path: dist
           destination: dist
