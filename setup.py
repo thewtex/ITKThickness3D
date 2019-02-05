@@ -13,7 +13,7 @@ except ImportError:
 
 setup(
     name='itk-thickness3d',
-    version='5.0b1',
+    version='5.0rc1',
     author='Insight Software Consortium',
     author_email='itk+community@discourse.itk.org',
     packages=['itk'],
