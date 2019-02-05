@@ -22,5 +22,3 @@ artifacts:
 
   # pushing entire folder as a zip archive
   - path: dist\*
-
-deploy: off
